@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Onye Ozi | Local Errand & Delivery</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/png" href="img/favicon.png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="src/input.css" />
+    <link rel="stylesheet" href="src/output.css" />
+  </head>
+
+  <body
+    class="bg-gray-50 text-gray-900 antialiased font-sans selection:bg-brand-200 selection:text-brand-900"
+  >
+    <a class="sr-only focus:not-sr-only" href="#view">Skip to content</a>
+    <!-- App wrapper -->
+    <!-- inline SVG sprite for icons -->
+    <div
+      aria-hidden="true"
+      style="position: absolute; width: 0; height: 0; overflow: hidden"
+    >
+      <!-- Inline SVG sprite -->
+      <svg xmlns="http://www.w3.org/2000/svg" style="display: none">
+        <symbol id="icon-rocket" viewBox="0 0 24 24">
+          <path
+            fill="currentColor"
+            d="M12 2c1.1 0 2 .9 2 2 0 .3-.1.6-.2.9l1.1 1.1c1.2-1 2.8-1.3 4.2-.7.8.3 1.6-.2 1.8-1 .2-1-.5-1.7-1.3-1.9C19.9.2 16 .1 13.1 1.5 12.6 1.7 12.3 2 12 2zM3 21c0-1.6 4.7-5.9 7.5-8.6 1.1 1.1 4.6 4.6 5.6 5.7C14.5 22.7 9.7 24 7.4 24 5.6 24 3 23 3 21z"
+          />
+        </symbol>
+        <symbol id="icon-clock" viewBox="0 0 24 24">
+          <path
+            fill="currentColor"
+            d="M12 1a11 11 0 1 0 11 11A11 11 0 0 0 12 1zm1 12h4v-2h-3V6h-2v7z"
+          />
+        </symbol>
+        <symbol id="icon-shield" viewBox="0 0 24 24">
+          <path
+            fill="currentColor"
+            d="M12 2l7 3v5c0 5-3.6 9.6-7 10-3.4-.4-7-5-7-10V5l7-3z"
+          />
+        </symbol>
+        <symbol id="icon-user" viewBox="0 0 24 24">
+          <path
+            fill="currentColor"
+            d="M12 12a4 4 0 1 0-4-4 4 4 0 0 0 4 4zm0 2c-3 0-8 1.5-8 4.5V22h16v-3.5C20 15.5 15 14 12 14z"
+          />
+        </symbol>
+      </svg>
+    </div>
+
+    <div id="app" class="min-h-screen flex flex-col">
+      <!-- Navbar -->
+      <nav
+        class="sticky top-0 z-50 bg-white/80 backdrop-blur-lg border-b border-gray-100 transition-all duration-300 transform"
+      >
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div class="flex justify-between h-20 items-center">
+            <div
+              class="flex items-center gap-3 cursor-pointer group"
+              onclick="window.location.hash='#/'"
+            >
+              <img
+                src="img/logo.png"
+                alt="Onye Ozi"
+                class="h-9 w-9 group-hover:scale-105 transition-transform duration-300"
+              />
+              <h1
+                class="text-2xl font-bold text-brand-700 tracking-tight group-hover:text-brand-600 transition-colors"
+              >
+                Onye Ozi
+              </h1>
+            </div>
+
+            <div class="hidden md:flex items-center space-x-8">
+              <a
+                href="#/"
+                class="text-gray-600 hover:text-brand-600 font-medium transition-colors text-sm uppercase tracking-wide"
+                data-link
+                >Home</a
+              >
+
+              <a
+                href="#/runner"
+                class="text-gray-600 hover:text-brand-600 font-medium transition-colors text-sm uppercase tracking-wide"
+                data-link
+                >Become a Runner</a
+              >
+              <a
+                href="#/faq"
+                class="text-gray-600 hover:text-brand-600 font-medium transition-colors text-sm uppercase tracking-wide"
+                data-link
+                >FAQ</a
+              >
+              <a
+                href="#/about"
+                class="text-gray-600 hover:text-brand-600 font-medium transition-colors text-sm uppercase tracking-wide"
+                data-link
+                >About</a
+              >
+              <a
+                href="#/contact"
+                class="text-gray-600 hover:text-brand-600 font-medium transition-colors text-sm uppercase tracking-wide"
+                data-link
+                >Contact</a
+              >
+              <a
+                href="#/request"
+                class="bg-brand-600 hover:bg-brand-700 text-white px-6 py-2.5 rounded-full font-medium transition-all shadow-lg shadow-brand-200 hover:shadow-brand-300 transform hover:-translate-y-0.5"
+                data-link
+                >Request Errand</a
+              >
+            </div>
+
+            <div class="md:hidden flex items-center">
+              <button
+                id="mobile-menu-btn"
+                aria-label="Open menu"
+                class="text-gray-600 hover:text-brand-600 focus:outline-none p-2"
+              >
+                <svg
+                  class="w-6 h-6"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M4 6h16M4 12h16M4 18h16"
+                  ></path>
+                </svg>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Mobile Menu Panel (Hidden by default) -->
+        <div
+          id="mobile-menu"
+          class="hidden md:hidden bg-white/95 backdrop-blur-xl border-t border-gray-100 absolute w-full left-0 shadow-xl z-50"
+        >
+          <div class="px-4 pt-2 pb-6 space-y-2 flex flex-col">
+            <a
+              href="#/"
+              class="block px-3 py-3 rounded-lg text-base font-medium text-gray-700 hover:text-brand-600 hover:bg-brand-50 transition-colors"
+              data-link
+              >Home</a
+            >
+            <a
+              href="#/request"
+              class="block px-3 py-3 rounded-lg text-base font-medium text-gray-700 hover:text-brand-600 hover:bg-brand-50 transition-colors"
+              data-link
+              >Request Errand</a
+            >
+            <a
+              href="#/runner"
+              class="block px-3 py-3 rounded-lg text-base font-medium text-gray-700 hover:text-brand-600 hover:bg-brand-50 transition-colors"
+              data-link
+              >Become a Runner</a
+            >
+            <a
+              href="#/about"
+              class="block px-3 py-3 rounded-lg text-base font-medium text-gray-700 hover:text-brand-600 hover:bg-brand-50 transition-colors"
+              data-link
+              >About</a
+            >
+            <a
+              href="#/contact"
+              class="block px-3 py-3 rounded-lg text-base font-medium text-gray-700 hover:text-brand-600 hover:bg-brand-50 transition-colors"
+              data-link
+              >Contact</a
+            >
+            <a
+              href="#/faq"
+              class="block px-3 py-3 rounded-lg text-base font-medium text-gray-700 hover:text-brand-600 hover:bg-brand-50 transition-colors"
+              data-link
+              >FAQ</a
+            >
+            <a
+              href="#/dashboard"
+              class="block px-3 py-3 rounded-lg text-base font-medium text-gray-700 hover:text-brand-600 hover:bg-brand-50 transition-colors"
+              data-link
+              >Dashboard</a
+            >
+            <a
+              href="#/terms"
+              class="block px-3 py-3 rounded-lg text-base font-medium text-gray-700 hover:text-brand-600 hover:bg-brand-50 transition-colors"
+              data-link
+              >Terms</a
+            >
+            <a
+              href="#/privacy"
+              class="block px-3 py-3 rounded-lg text-base font-medium text-gray-700 hover:text-brand-600 hover:bg-brand-50 transition-colors"
+              data-link
+              >Privacy</a
+            >
+          </div>
+        </div>
+      </nav>
+
+      <!-- Main content (router mounts here) -->
+      <main id="view" class="flex-1"></main>
+
+      <!-- Footer -->
+      <footer
+        class="bg-brand-950 text-brand-100 pt-20 pb-10 relative overflow-hidden"
+      >
+        <img
+          src="img/footer-pattern.png"
+          alt=""
+          class="absolute inset-0 w-full h-full object-cover opacity-5 pointer-events-none mix-blend-overlay"
+        />
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+          <div class="grid grid-cols-1 md:grid-cols-4 gap-12 mb-16">
+            <div class="col-span-1 md:col-span-1 space-y-6">
+              <div class="flex items-center gap-3">
+                <img
+                  src="img/logo.png"
+                  alt="Onye Ozi"
+                  class="h-9 w-9 bg-white rounded-full p-0.5"
+                />
+                <span class="text-2xl font-bold text-white tracking-tight"
+                  >Onye Ozi</span
+                >
+              </div>
+              <p class="text-brand-200 leading-relaxed">
+                Empowering local communities through reliable errand and
+                delivery services. Fast, secure, and community-driven.
+              </p>
+            </div>
+
+            <div>
+              <h3
+                class="text-white font-semibold mb-6 uppercase tracking-wider text-sm"
+              >
+                Company
+              </h3>
+              <ul class="space-y-4 text-sm">
+                <li>
+                  <a
+                    href="#/about"
+                    class="hover:text-white transition-colors flex items-center gap-2"
+                    data-link
+                    ><span class="w-1.5 h-1.5 rounded-full bg-brand-500"></span
+                    >About Us</a
+                  >
+                </li>
+                <li>
+                  <a
+                    href="#/runner"
+                    class="hover:text-white transition-colors flex items-center gap-2"
+                    data-link
+                    ><span class="w-1.5 h-1.5 rounded-full bg-brand-500"></span
+                    >Careers / Runners</a
+                  >
+                </li>
+                <li>
+                  <a
+                    href="#/contact"
+                    class="hover:text-white transition-colors flex items-center gap-2"
+                    data-link
+                    ><span class="w-1.5 h-1.5 rounded-full bg-brand-500"></span
+                    >Contact</a
+                  >
+                </li>
+              </ul>
+            </div>
+
+            <div>
+              <h3
+                class="text-white font-semibold mb-6 uppercase tracking-wider text-sm"
+              >
+                Support
+              </h3>
+              <ul class="space-y-4 text-sm">
+                <li>
+                  <a
+                    href="#/faq"
+                    class="hover:text-white transition-colors flex items-center gap-2"
+                    data-link
+                    ><span class="w-1.5 h-1.5 rounded-full bg-brand-500"></span
+                    >FAQ</a
+                  >
+                </li>
+                <li>
+                  <a
+                    href="#/terms"
+                    class="hover:text-white transition-colors flex items-center gap-2"
+                    data-link
+                    ><span class="w-1.5 h-1.5 rounded-full bg-brand-500"></span
+                    >Terms of Service</a
+                  >
+                </li>
+                <li>
+                  <a
+                    href="#/privacy"
+                    class="hover:text-white transition-colors flex items-center gap-2"
+                    data-link
+                    ><span class="w-1.5 h-1.5 rounded-full bg-brand-500"></span
+                    >Privacy Policy</a
+                  >
+                </li>
+              </ul>
+            </div>
+
+            <div>
+              <h3
+                class="text-white font-semibold mb-6 uppercase tracking-wider text-sm"
+              >
+                Connect
+              </h3>
+              <div class="flex space-x-4">
+                <!-- X (Twitter) -->
+                <a
+                  href="#"
+                  class="w-10 h-10 rounded-full bg-brand-900 flex items-center justify-center hover:bg-brand-600 transition-all transform hover:-translate-y-1"
+                >
+                  <span class="sr-only">X</span>
+                  <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                    <path
+                      d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"
+                    />
+                  </svg>
+                </a>
+                <!-- Facebook -->
+                <a
+                  href="#"
+                  class="w-10 h-10 rounded-full bg-brand-900 flex items-center justify-center hover:bg-brand-600 transition-all transform hover:-translate-y-1"
+                >
+                  <span class="sr-only">Facebook</span>
+                  <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                    <path
+                      d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"
+                    ></path>
+                  </svg>
+                </a>
+                <!-- Instagram -->
+                <a
+                  href="#"
+                  class="w-10 h-10 rounded-full bg-brand-900 flex items-center justify-center hover:bg-brand-600 transition-all transform hover:-translate-y-1"
+                >
+                  <span class="sr-only">Instagram</span>
+                  <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                    <path
+                      d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"
+                    />
+                  </svg>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <div
+            class="border-t border-brand-900/50 pt-8 flex flex-col md:flex-row justify-between items-center gap-4 text-sm text-brand-300/60"
+          >
+            <p>© 2026 Onye Ọdinaka. All rights reserved.</p>
+            <div class="flex items-center gap-1">
+              Built with
+              <span class="text-brand-500 animate-pulse">❤️</span> for local
+              communities.
+            </div>
+          </div>
+        </div>
+      </footer>
+    </div>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            fontFamily: { sans: ["Inter", "sans-serif"] },
+            colors: {
+              brand: {
+                50: "#ecfdf5",
+                100: "#d1fae5",
+                200: "#a7f3d0",
+                300: "#6ee7b7",
+                400: "#34d399",
+                500: "#10b981",
+                600: "#059669",
+                700: "#047857",
+                800: "#065f46",
+                900: "#064e3b",
+                950: "#022c22",
+              },
+            },
+          },
+        },
+      };
+    </script>
+    <script src="index.js"></script>
+  </body>
+</html>
