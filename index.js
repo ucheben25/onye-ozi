@@ -62,13 +62,13 @@ const App = (() => {
     const container = el("main", { class: "flex-1" });
     container.innerHTML = `
       <!-- Hero Section -->
-      <section class="relative min-h-[600px] lg:h-[90vh] flex items-center justify-center overflow-hidden">
+      <section class="relative min-h-[600px] lg:h-screen flex items-center justify-center overflow-hidden">
         <!-- Background Image with Overlay -->
         <div class="absolute inset-0 z-0">
           <img 
             src="img/errand.png" 
             alt="Onye Ozi delivery runner" 
-            class="w-full h-full object-cover object-top"
+            class="w-full h-full object-cover object-[0%_35%]"
           />
           <div class="absolute inset-0 bg-gradient-to-l from-brand-950/90 via-brand-950/40 to-transparent"></div>
         </div>
