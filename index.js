@@ -268,7 +268,7 @@ const App = (() => {
                 <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
               </div>
               <blockquote class="text-lg italic mb-6 text-brand-50">"Fast and dependable — saved me time and supported a local runner."</blockquote>
-              <cite class="not-italic font-bold text-white">— Chika O.</cite>
+              <cite class="not-italic font-bold text-white">— Chinecherem S.</cite>
             </div>
             
             <div class="bg-white/10 backdrop-blur-sm p-8 rounded-2xl border border-white/10 hover:bg-white/15 transition-colors">
@@ -280,7 +280,7 @@ const App = (() => {
                 <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
               </div>
               <blockquote class="text-lg italic mb-6 text-brand-50">"Using Onye Ozi makes me feel safe. All runners are verified and friendly!"</blockquote>
-              <cite class="not-italic font-bold text-white">— Amina Y.</cite>
+              <cite class="not-italic font-bold text-white">— Chiletaram D.</cite>
             </div>
 
             <div class="bg-white/10 backdrop-blur-sm p-8 rounded-2xl border border-white/10 hover:bg-white/15 transition-colors">
@@ -292,7 +292,7 @@ const App = (() => {
                 <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
               </div>
               <blockquote class="text-lg italic mb-6 text-brand-50">"I love that this creates local opportunities. I feel good using it."</blockquote>
-              <cite class="not-italic font-bold text-white">— Emeka K.</cite>
+              <cite class="not-italic font-bold text-white">— Emeka V.</cite>
             </div>
           </div>
         </div>
