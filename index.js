@@ -66,28 +66,28 @@ const App = (() => {
         <!-- Background Image with Overlay -->
         <div class="absolute inset-0 z-0">
           <img 
-            src="img/market1.png" 
-            alt="Bustling local market" 
-            class="w-full h-full object-cover object-center"
+            src="img/errand.png" 
+            alt="Onye Ozi delivery runner" 
+            class="w-full h-full object-cover object-top"
           />
-          <div class="absolute inset-0 bg-gradient-to-r from-brand-950/90 to-brand-900/40 backdrop-blur-[2px]"></div>
+          <div class="absolute inset-0 bg-gradient-to-r from-brand-950/85 to-brand-900/30 backdrop-blur-[1px]"></div>
         </div>
 
         <!-- Content -->
-        <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full py-20 text-center md:text-left">
+        <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full py-16 text-center md:text-left">
           <div class="max-w-3xl">
-            <span class="inline-block px-4 py-1.5 rounded-full bg-brand-500 text-white text-sm font-semibold tracking-wider uppercase mb-6 shadow-lg shadow-brand-500/30">
+            <span class="inline-block px-4 py-1.5 rounded-full bg-brand-500 text-white text-sm font-semibold tracking-wider uppercase mb-4 shadow-lg shadow-brand-500/30">
               Trusted by 5,000+ Locals
             </span>
-            <h2 class="text-4xl md:text-6xl font-bold text-white leading-tight mb-6 tracking-tight shadow-black/20 text-shadow-sm">
+            <h2 class="text-4xl md:text-6xl font-bold text-white leading-tight mb-4 tracking-tight shadow-black/20 text-shadow-sm">
               Your Local Errands, <br/>
               <span class="text-white">Solved by Community.</span>
             </h2>
-            <p class="text-lg md:text-xl text-white mb-8 leading-relaxed max-w-2xl font-light text-shadow-sm">
+            <p class="text-lg md:text-xl text-white mb-6 leading-relaxed max-w-2xl font-semibold text-shadow-sm">
               Connect with trusted local runners to handle your groceries, parcels, and daily tasks. Fast, secure, and empowering for your community.
             </p>
             
-            <div class="flex flex-col sm:flex-row gap-4 justify-center md:justify-start">
+            <div class="flex flex-col sm:flex-row gap-4 justify-center md:justify-start mb-8">
               <a 
                 href="#/request" 
                 class="bg-brand-500 hover:bg-brand-400 text-white text-lg px-8 py-4 rounded-full font-semibold transition-all shadow-xl shadow-brand-900/20 hover:shadow-brand-500/30 hover:-translate-y-1"
@@ -105,10 +105,10 @@ const App = (() => {
             </div>
 
             <!-- Trust Indicators -->
-            <div class="mt-12 pt-8 border-t border-white/10 flex flex-wrap gap-8 justify-center md:justify-start opacity-90">
+            <div class="pt-6 border-t border-white/10 flex flex-row gap-6 justify-center md:justify-start opacity-90">
               <div class="flex items-center gap-3">
                 <div class="p-2 bg-brand-800/50 rounded-lg">
-                  <svg class="w-6 h-6 text-white" fill="none" class="w-6 h-6" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z" /></svg>
+                  <svg class="w-6 h-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z" /></svg>
                 </div>
                 <div class="text-left">
                   <div class="text-2xl font-bold text-white">500+</div>
@@ -117,7 +117,7 @@ const App = (() => {
               </div>
               <div class="flex items-center gap-3">
                 <div class="p-2 bg-brand-800/50 rounded-lg">
-                  <svg class="w-6 h-6 text-white" fill="none" class="w-6 h-6" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
+                  <svg class="w-6 h-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
                 </div>
                 <div class="text-left">
                   <div class="text-2xl font-bold text-white">30min</div>
