@@ -68,7 +68,7 @@ const App = (() => {
           <img 
             src="img/errand.png" 
             alt="Onye Ozi delivery runner" 
-            class="w-full h-full object-cover object-center"
+            class="w-full h-full object-cover object-top"
           />
           <div class="absolute inset-0 bg-gradient-to-l from-brand-950/90 via-brand-950/40 to-transparent"></div>
         </div>
