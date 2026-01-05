@@ -66,21 +66,22 @@ const App = (() => {
         <!-- Background Image with Overlay -->
         <div class="absolute inset-0 z-0">
           <img 
-            src="img/errand.png" 
+            src="img/errand.jpg" 
             alt="Onye Ozi delivery runner" 
-            class="w-full h-full object-cover object-top"
+            class="w-full h-full object-cover object-[center_25%] md:object-[center_30%]"
+            decoding="async" fetchpriority="high"
           />
           <div class="absolute inset-0 bg-gradient-to-r from-brand-950/85 to-brand-900/30 backdrop-blur-[1px]"></div>
         </div>
 
         <!-- Content -->
-        <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full py-16 text-center md:text-left">
+        <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full py-16 text-center md:text-left flex lg:justify-end">
           <div class="max-w-3xl">
             <span class="inline-block px-4 py-1.5 rounded-full bg-brand-500 text-white text-sm font-semibold tracking-wider uppercase mb-4 shadow-lg shadow-brand-500/30">
               Trusted by 5,000+ Locals
             </span>
             <h2 class="text-4xl md:text-6xl font-bold text-white leading-tight mb-4 tracking-tight shadow-black/20 text-shadow-sm">
-              Your Local Errands, <br class="hidden md:block"/>Solved by Community.
+              Your Local Errands, <br/>Solved by Community.
             </h2>
             <p class="text-lg md:text-xl text-white mb-6 leading-relaxed max-w-2xl font-semibold text-shadow-sm">
               Connect with trusted local runners to handle your groceries, parcels, and daily tasks. Fast, secure, and empowering for your community.
@@ -132,7 +133,7 @@ const App = (() => {
       <section class="py-24 bg-gray-50" aria-labelledby="services-title">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div class="text-center max-w-3xl mx-auto mb-16">
-            <h3 id="services-title" class="text-brand-900 text-3xl md:text-4xl font-bold mb-4">Whatever you need, <br/>we've got a runner for it.</h3>
+            <h3 id="services-title" class="text-brand-900 text-2xl sm:text-3xl md:text-4xl font-bold mb-4">Whatever you need, <br/>we've got a runner for it.</h3>
             <p class="text-gray-600 text-lg">Choose from our core services designed to make your life easier.</p>
           </div>
 
@@ -141,7 +142,7 @@ const App = (() => {
             <div class="group bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 border border-gray-100">
               <div class="h-56 overflow-hidden relative">
                 <div class="absolute inset-0 bg-brand-900/10 group-hover:bg-transparent transition-colors z-10"></div>
-                <img src="img/grocerie.png" alt="Grocery delivery" class="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-700" />
+                <img src="img/grocerie.jpg" alt="Grocery delivery" class="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-700" />
               </div>
               <div class="p-8">
                 <div class="w-12 h-12 bg-brand-50 rounded-xl flex items-center justify-center mb-6 group-hover:bg-brand-500 transition-colors duration-300">
@@ -159,7 +160,7 @@ const App = (() => {
             <div class="group bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 border border-gray-100">
               <div class="h-56 overflow-hidden relative">
                 <div class="absolute inset-0 bg-brand-900/10 group-hover:bg-transparent transition-colors z-10"></div>
-                <img src="img/errand.png" alt="Parcel delivery" class="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-700" />
+                <img src="img/errand.jpg" alt="Parcel delivery" class="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-700" />
               </div>
               <div class="p-8">
                 <div class="w-12 h-12 bg-brand-50 rounded-xl flex items-center justify-center mb-6 group-hover:bg-brand-500 transition-colors duration-300">
@@ -177,7 +178,7 @@ const App = (() => {
             <div class="group bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 border border-gray-100">
               <div class="h-56 overflow-hidden relative">
                 <div class="absolute inset-0 bg-brand-900/10 group-hover:bg-transparent transition-colors z-10"></div>
-                <img src="img/shopping.png" alt="Personal tasks" class="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-700" />
+                <img src="img/shopping.jpg" alt="Personal tasks" class="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-700" />
               </div>
               <div class="p-8">
                 <div class="w-12 h-12 bg-brand-50 rounded-xl flex items-center justify-center mb-6 group-hover:bg-brand-500 transition-colors duration-300">
@@ -199,8 +200,8 @@ const App = (() => {
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div class="flex flex-col md:flex-row gap-16 items-center">
             <div class="w-full md:w-1/2 relative">
-              <div class="aspect-square rounded-3xl overflow-hidden shadow-2xl relative z-10">
-                 <img src="img/shop.png" alt="How Onye Ozi works" class="w-full h-full object-cover" />
+                <div class="aspect-square rounded-3xl overflow-hidden shadow-2xl relative z-10">
+                  <img src="img/shop.jpg" alt="How Onye Ozi works" class="w-full h-full object-cover" decoding="async" />
               </div>
               <!-- Decorative elements -->
               <div class="absolute -bottom-6 -right-6 w-2/3 h-2/3 bg-brand-100 rounded-3xl -z-10"></div>
@@ -357,7 +358,7 @@ const App = (() => {
         
         <!-- Image Section -->
         <div class="w-full md:w-1/2 relative min-h-[300px] md:min-h-0">
-          <img src="img/errand.png" alt="Person holding a package" class="absolute inset-0 w-full h-full object-cover" />
+          <img src="img/errand.jpg" alt="Person holding a package" class="absolute inset-0 w-full h-full object-cover" decoding="async" fetchpriority="high" />
           <div class="absolute inset-0 bg-gradient-to-t from-brand-900/60 to-transparent flex items-end p-12">
             <div class="text-white">
                <div class="text-3xl font-bold mb-2">Fast & Secure</div>
@@ -443,7 +444,7 @@ const App = (() => {
         
         <!-- Image Section -->
         <div class="w-full md:w-1/2 relative min-h-[300px] md:min-h-0 bg-brand-900">
-          <img src="img/market.png" alt="Runner in the city" class="absolute inset-0 w-full h-full object-cover opacity-80 mix-blend-overlay" />
+          <img src="img/market.jpg" alt="Runner in the city" class="absolute inset-0 w-full h-full object-cover opacity-80 mix-blend-overlay" decoding="async" />
           <div class="absolute inset-0 bg-gradient-to-t from-brand-900 to-transparent flex items-end p-12">
             <div class="text-white relative z-10">
                <div class="text-5xl font-bold mb-4">Be Your Own Boss</div>
@@ -484,7 +485,7 @@ const App = (() => {
     container.innerHTML = `
       <!-- Hero Banner -->
       <div class="relative h-[400px]">
-        <img src="img/market.png" alt="Community market" class="w-full h-full object-cover" />
+        <img src="img/market.jpg" alt="Community market" class="w-full h-full object-cover" decoding="async" />
         <div class="absolute inset-0 bg-brand-950/70 flex items-center justify-center">
             <h2 class="text-4xl md:text-5xl font-bold text-white text-center">Community First, <br/><span class="text-brand-300">Always.</span></h2>
         </div>
