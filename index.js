@@ -80,8 +80,7 @@ const App = (() => {
               Trusted by 5,000+ Locals
             </span>
             <h2 class="text-4xl md:text-6xl font-bold text-white leading-tight mb-4 tracking-tight shadow-black/20 text-shadow-sm">
-              Your Local Errands, <br/>
-              <span class="text-white">Solved by Community.</span>
+              Your Local Errands, Solved by Community.
             </h2>
             <p class="text-lg md:text-xl text-white mb-6 leading-relaxed max-w-2xl font-semibold text-shadow-sm">
               Connect with trusted local runners to handle your groceries, parcels, and daily tasks. Fast, secure, and empowering for your community.
