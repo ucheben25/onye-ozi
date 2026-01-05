@@ -70,7 +70,7 @@ const App = (() => {
             alt="Onye Ozi delivery runner" 
             class="w-full h-full object-cover object-top"
           />
-          <div class="absolute inset-0 bg-gradient-to-r from-brand-950/85 to-brand-900/30"></div>
+          <div class="absolute inset-0 bg-gradient-to-r from-brand-950/85 to-brand-900/30 backdrop-blur-[1px]"></div>
         </div>
 
         <!-- Content -->
@@ -132,7 +132,7 @@ const App = (() => {
       <section class="py-24 bg-gray-50" aria-labelledby="services-title">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div class="text-center max-w-3xl mx-auto mb-16">
-            <h3 id="services-title" class="text-brand-900 text-2xl md:text-4xl font-bold mb-4">Whatever you need, <br/>we've got a runner for it.</h3>
+            <h3 id="services-title" class="text-brand-900 text-3xl md:text-4xl font-bold mb-4">Whatever you need, <br/>we've got a runner for it.</h3>
             <p class="text-gray-600 text-lg">Choose from our core services designed to make your life easier.</p>
           </div>
 
