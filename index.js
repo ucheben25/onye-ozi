@@ -70,23 +70,23 @@ const App = (() => {
             alt="Onye Ozi delivery runner" 
             class="w-full h-full object-cover object-top"
           />
-          <div class="absolute inset-0 bg-gradient-to-r from-brand-950/85 to-brand-900/30 backdrop-blur-[1px]"></div>
+          <div class="absolute inset-0 bg-gradient-to-r from-brand-950/85 to-brand-900/30"></div>
         </div>
 
         <!-- Content -->
-        <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full py-16 text-center md:text-left">
-          <div class="max-w-3xl">
+        <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full py-16 text-center md:text-left lg:text-right">
+          <div class="max-w-3xl lg:ml-auto">
             <span class="inline-block px-4 py-1.5 rounded-full bg-brand-500 text-white text-sm font-semibold tracking-wider uppercase mb-4 shadow-lg shadow-brand-500/30">
               Trusted by 5,000+ Locals
             </span>
             <h2 class="text-4xl md:text-6xl font-bold text-white leading-tight mb-4 tracking-tight shadow-black/20 text-shadow-sm">
               Your Local Errands, <br class="hidden md:block"/>Solved by Community.
             </h2>
-            <p class="text-lg md:text-xl text-white mb-6 leading-relaxed max-w-2xl font-semibold text-shadow-sm">
+            <p class="text-lg md:text-xl text-white mb-6 leading-relaxed max-w-2xl font-semibold text-shadow-sm lg:ml-auto">
               Connect with trusted local runners to handle your groceries, parcels, and daily tasks. Fast, secure, and empowering for your community.
             </p>
             
-            <div class="flex flex-col sm:flex-row gap-4 justify-center md:justify-start mb-8">
+            <div class="flex flex-col sm:flex-row gap-4 justify-center md:justify-start lg:justify-end mb-8">
               <a 
                 href="#/request" 
                 class="bg-brand-500 hover:bg-brand-400 text-white text-lg px-8 py-4 rounded-full font-semibold transition-all shadow-xl shadow-brand-900/20 hover:shadow-brand-500/30 hover:-translate-y-1"
@@ -104,7 +104,7 @@ const App = (() => {
             </div>
 
             <!-- Trust Indicators -->
-            <div class="pt-6 border-t border-white/10 flex flex-row gap-6 justify-center md:justify-start opacity-90">
+            <div class="pt-6 border-t border-white/10 flex flex-row gap-6 justify-center md:justify-start lg:justify-end opacity-90">
               <div class="flex items-center gap-3">
                 <div class="p-2 bg-brand-800/50 rounded-lg">
                   <svg class="w-6 h-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z" /></svg>
@@ -132,7 +132,7 @@ const App = (() => {
       <section class="py-24 bg-gray-50" aria-labelledby="services-title">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div class="text-center max-w-3xl mx-auto mb-16">
-            <h3 id="services-title" class="text-brand-900 text-3xl md:text-4xl font-bold mb-4">Whatever you need, <br/>we've got a runner for it.</h3>
+            <h3 id="services-title" class="text-brand-900 text-2xl md:text-4xl font-bold mb-4">Whatever you need, <br/>we've got a runner for it.</h3>
             <p class="text-gray-600 text-lg">Choose from our core services designed to make your life easier.</p>
           </div>
 
