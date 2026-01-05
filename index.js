@@ -32,8 +32,29 @@ const App = (() => {
     const pageName = path.replace(/\//g, "") || "home";
     document.body.setAttribute("data-page", pageName);
     // close mobile menu if open
-    const mobileMenu = document.getElementById("mobile-menu");
-    if (mobileMenu) mobileMenu.remove();
+    const mobileMenuCard = document.getElementById("mobile-menu-card");
+    if (mobileMenuCard && mobileMenuCard.classList.contains("opacity-100")) {
+      mobileMenuCard.classList.add(
+        "opacity-0",
+        "-translate-y-8",
+        "scale-95",
+        "pointer-events-none"
+      );
+      mobileMenuCard.classList.remove(
+        "opacity-100",
+        "translate-y-0",
+        "scale-100",
+        "pointer-events-auto"
+      );
+
+      const mobileBtn = document.getElementById("mobile-menu-btn");
+      if (mobileBtn) {
+        mobileBtn.innerHTML = `
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+          </svg>`;
+      }
+    }
   }
 
   // Page templates
@@ -45,7 +66,7 @@ const App = (() => {
         <!-- Background Image with Overlay -->
         <div class="absolute inset-0 z-0">
           <img 
-            src="img/market.png" 
+            src="img/market1.png" 
             alt="Bustling local market" 
             class="w-full h-full object-cover object-center"
           />
@@ -479,6 +500,11 @@ const App = (() => {
              a hand with those willing to lend one (and earn a living), we keep resources circulating within the local economy.
            </p>
 
+           <h3 class="text-2xl font-bold text-brand-900 mb-6">Our Vision</h3>
+           <p class="mb-8 leading-relaxed">
+             To be the heartbeat of every community, where no need goes unmet and every journey supports a local dream.
+           </p>
+
            <div class="grid md:grid-cols-3 gap-8 my-12 not-prose">
              <div class="bg-brand-50 p-6 rounded-2xl border border-brand-100 text-center">
                <div class="w-12 h-12 bg-white rounded-full flex items-center justify-center mx-auto mb-4 shadow-sm text-2xl">🌱</div>
@@ -524,17 +550,24 @@ const App = (() => {
                
                <div class="space-y-6">
                  <div class="flex items-center gap-4">
+                   <div class="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center">📞</div>
+                   <div>
+                     <div class="text-xs text-brand-300 uppercase">Phone</div>
+                     <div class="font-medium">+234 706 591 7720</div>
+                   </div>
+                 </div>
+                 <div class="flex items-center gap-4">
                     <div class="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center">✉️</div>
                     <div>
                       <div class="text-xs text-brand-300 uppercase">Email</div>
-                      <div class="font-medium">hello@onyeozi.com</div>
+                      <div class="font-medium">onyeozi@gmail.com</div>
                     </div>
                  </div>
                  <div class="flex items-center gap-4">
                     <div class="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center">📍</div>
                     <div>
                       <div class="text-xs text-brand-300 uppercase">Office</div>
-                      <div class="font-medium">Lagos, Nigeria</div>
+                      <div class="font-medium">Aba, Nigeria.</div>
                     </div>
                  </div>
                </div>
@@ -557,8 +590,12 @@ const App = (() => {
                <input name="name" class="w-full bg-gray-50 border border-gray-200 rounded-xl px-4 py-3 focus:outline-none focus:ring-2 focus:ring-brand-500 focus:bg-white transition-all" required />
              </div>
              <div>
-               <label class="block font-medium text-gray-700 mb-2">Email</label>
+               <label class="block font-medium text-gray-700 mb-2">Email Address</label>
                <input name="email" type="email" class="w-full bg-gray-50 border border-gray-200 rounded-xl px-4 py-3 focus:outline-none focus:ring-2 focus:ring-brand-500 focus:bg-white transition-all" required />
+             </div>
+             <div>
+               <label class="block font-medium text-gray-700 mb-2">Phone Number</label>
+               <input name="phone" type="tel" class="w-full bg-gray-50 border border-gray-200 rounded-xl px-4 py-3 focus:outline-none focus:ring-2 focus:ring-brand-500 focus:bg-white transition-all" placeholder="+234 ..." />
              </div>
              <div>
                <label class="block font-medium text-gray-700 mb-2">Message</label>
@@ -945,69 +982,6 @@ const App = (() => {
         location.hash = a.getAttribute("href");
       }
     });
-    // Mobile menu logic
-    const mobileBtn = document.getElementById("mobile-menu-btn");
-    const mobileMenu = document.getElementById("mobile-menu");
-
-    if (mobileBtn && mobileMenu) {
-      // Toggle menu
-      mobileBtn.addEventListener("click", (e) => {
-        e.stopPropagation();
-
-        // Toggle open/closed state
-        const isClosed = mobileMenu.classList.contains("pointer-events-none");
-
-        // Icons
-        const hamburgerIcon = `
-          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
-          </svg>`;
-        const closeIcon = `
-          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
-          </svg>`;
-
-        if (isClosed) {
-          mobileMenu.classList.remove(
-            "pointer-events-none",
-            "opacity-0",
-            "-translate-y-2"
-          );
-          mobileBtn.innerHTML = closeIcon;
-        } else {
-          mobileMenu.classList.add(
-            "pointer-events-none",
-            "opacity-0",
-            "-translate-y-2"
-          );
-          mobileBtn.innerHTML = hamburgerIcon;
-        }
-      });
-
-      const closeMenu = () => {
-        mobileMenu.classList.add(
-          "pointer-events-none",
-          "opacity-0",
-          "-translate-y-2"
-        );
-        mobileBtn.innerHTML = `
-          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
-          </svg>`;
-      };
-
-      // Close menu when a link is clicked
-      mobileMenu.querySelectorAll("a").forEach((link) => {
-        link.addEventListener("click", closeMenu);
-      });
-
-      // Close menu when clicking outside
-      document.addEventListener("click", (e) => {
-        if (!mobileMenu.contains(e.target) && !mobileBtn.contains(e.target)) {
-          closeMenu();
-        }
-      });
-    }
   }
 
   // Initialize app

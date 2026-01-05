@@ -59,7 +59,7 @@
     <div id="app" class="min-h-screen flex flex-col">
       <!-- Navbar -->
       <nav
-        class="sticky top-0 z-50 bg-white/80 backdrop-blur-lg border-b border-gray-100 transition-all duration-300 transform"
+        class="sticky top-0 z-[100] bg-white/80 backdrop-blur-lg border-b border-gray-100 relative"
       >
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div class="flex justify-between h-20 items-center">
@@ -143,63 +143,61 @@
           </div>
         </div>
 
-        <!-- Mobile Menu Panel (Hidden by default) -->
+        <!-- Mobile Menu Dropdown -->
         <div
-          id="mobile-menu"
-          class="md:hidden bg-white/80 backdrop-blur-lg border-t border-gray-100 absolute top-full left-0 w-full shadow-2xl z-50 transform transition-all duration-300 ease-in-out origin-top opacity-0 pointer-events-none -translate-y-2"
+          id="mobile-menu-card"
+          class="md:hidden absolute top-24 left-4 right-4 bg-white/95 backdrop-blur-2xl border border-white/40 shadow-[0_20px_40px_-15px_rgba(0,0,0,0.1)] rounded-3xl transform transition-all duration-500 cubic-bezier(0.34, 1.56, 0.64, 1) opacity-0 -translate-y-8 scale-95 pointer-events-none flex flex-col items-center py-8 space-y-2 ring-1 ring-black/5"
         >
-          <div class="px-6 py-6 space-y-3 flex flex-col">
+          <nav class="flex flex-col items-center space-y-1 w-full px-6">
             <a
               href="#/"
-              class="block px-3 py-3 rounded-lg text-base font-medium text-gray-700 hover:text-brand-600 hover:bg-brand-50 transition-colors"
+              class="block w-full text-center py-3 rounded-xl text-base font-medium text-gray-600 hover:text-brand-700 hover:bg-brand-50/50 transition-all"
               data-link
               >Home</a
             >
             <a
-              href="#/request"
-              class="block px-3 py-3 rounded-lg text-base font-medium text-gray-700 hover:text-brand-600 hover:bg-brand-50 transition-colors"
-              data-link
-              >Request Errand</a
-            >
-            <a
               href="#/runner"
-              class="block px-3 py-3 rounded-lg text-base font-medium text-gray-700 hover:text-brand-600 hover:bg-brand-50 transition-colors"
+              class="block w-full text-center py-3 rounded-xl text-base font-medium text-gray-600 hover:text-brand-700 hover:bg-brand-50/50 transition-all"
               data-link
               >Become a Runner</a
             >
             <a
+              href="#/faq"
+              class="block w-full text-center py-3 rounded-xl text-base font-medium text-gray-600 hover:text-brand-700 hover:bg-brand-50/50 transition-all"
+              data-link
+              >FAQ</a
+            >
+            <a
               href="#/about"
-              class="block px-3 py-3 rounded-lg text-base font-medium text-gray-700 hover:text-brand-600 hover:bg-brand-50 transition-colors"
+              class="block w-full text-center py-3 rounded-xl text-base font-medium text-gray-600 hover:text-brand-700 hover:bg-brand-50/50 transition-all"
               data-link
               >About</a
             >
             <a
               href="#/contact"
-              class="block px-3 py-3 rounded-lg text-base font-medium text-gray-700 hover:text-brand-600 hover:bg-brand-50 transition-colors"
+              class="block w-full text-center py-3 rounded-xl text-base font-medium text-gray-600 hover:text-brand-700 hover:bg-brand-50/50 transition-all"
               data-link
               >Contact</a
             >
-            <a
-              href="#/faq"
-              class="block px-3 py-3 rounded-lg text-base font-medium text-gray-700 hover:text-brand-600 hover:bg-brand-50 transition-colors"
-              data-link
-              >FAQ</a
-            >
-            <a
-              href="#/dashboard"
-              class="block px-3 py-3 rounded-lg text-base font-medium text-gray-700 hover:text-brand-600 hover:bg-brand-50 transition-colors"
-              data-link
-              >Dashboard</a
-            >
+          </nav>
+
+          <a
+            href="#/request"
+            class="mt-4 bg-brand-600 hover:bg-brand-700 text-white px-10 py-3.5 rounded-full font-semibold transition-all shadow-xl shadow-brand-500/20 hover:shadow-brand-500/40 transform hover:-translate-y-1 active:scale-95"
+            data-link
+            >Request Errand</a
+          >
+
+          <div class="flex gap-6 pt-4">
             <a
               href="#/terms"
-              class="block px-3 py-3 rounded-lg text-base font-medium text-gray-700 hover:text-brand-600 hover:bg-brand-50 transition-colors"
+              class="text-xs font-medium text-gray-400 hover:text-brand-600 transition-colors"
               data-link
               >Terms</a
             >
             <a
               href="#/privacy"
-              class="block px-3 py-3 rounded-lg text-base font-medium text-gray-700 hover:text-brand-600 hover:bg-brand-50 transition-colors"
+              class="text-xs font-medium text-gray-400 hover:text-brand-600 transition-colors"
               data-link
               >Privacy</a
             >
@@ -395,6 +393,62 @@
           },
         },
       };
+    </script>
+    <script>
+      const mobileBtn = document.getElementById("mobile-menu-btn");
+      const mobileMenuCard = document.getElementById("mobile-menu-card");
+
+      function toggleMenu() {
+        const isClosed = mobileMenuCard.classList.contains("opacity-0");
+        const hamburgerIcon = `
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+          </svg>`;
+        const closeIcon = `
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+          </svg>`;
+
+        if (isClosed) {
+          // Open: Fade in, slide down, scale up
+          mobileMenuCard.classList.remove(
+            "opacity-0",
+            "-translate-y-8",
+            "scale-95",
+            "pointer-events-none"
+          );
+          mobileMenuCard.classList.add(
+            "opacity-100",
+            "translate-y-0",
+            "scale-100",
+            "pointer-events-auto"
+          );
+          mobileBtn.innerHTML = closeIcon;
+        } else {
+          // Close: Fade out, slide up, scale down
+          mobileMenuCard.classList.add(
+            "opacity-0",
+            "-translate-y-8",
+            "scale-95",
+            "pointer-events-none"
+          );
+          mobileMenuCard.classList.remove(
+            "opacity-100",
+            "translate-y-0",
+            "scale-100",
+            "pointer-events-auto"
+          );
+          mobileBtn.innerHTML = hamburgerIcon;
+        }
+      }
+
+      mobileBtn.addEventListener("click", toggleMenu);
+
+      // Close when clicking a link
+      mobileMenuCard
+        .querySelectorAll("a")
+        .forEach((link) => link.addEventListener("click", toggleMenu));
     </script>
     <script src="index.js"></script>
   </body>
