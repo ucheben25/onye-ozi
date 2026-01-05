@@ -945,26 +945,29 @@ const App = (() => {
         location.hash = a.getAttribute("href");
       }
     });
-    // Mobile menu
+    // Mobile menu logic
     const mobileBtn = document.getElementById("mobile-menu-btn");
-    if (mobileBtn) {
-      mobileBtn.addEventListener("click", () => {
-        const menuHtml = `
-          <div id="mobile-menu" class="absolute right-4 top-16 bg-white border rounded shadow p-4 w-48">
-            <a href="#/" data-link class="block py-1">Home</a>
-            <a href="#/request" data-link class="block py-1">Request Errand</a>
-            <a href="#/runner" data-link class="block py-1">Become a Runner</a>
-            <a href="#/about" data-link class="block py-1">About</a>
-            <a href="#/contact" data-link class="block py-1">Contact</a>
-            <a href="#/faq" data-link class="block py-1">FAQ</a>
-            <a href="#/dashboard" data-link class="block py-1">Dashboard</a>
-            <a href="#/terms" data-link class="block py-1">Terms</a>
-            <a href="#/privacy" data-link class="block py-1">Privacy</a>
-          </div>`;
-        // toggle
-        const existing = document.getElementById("mobile-menu");
-        if (existing) existing.remove();
-        else document.body.insertAdjacentHTML("beforeend", menuHtml);
+    const mobileMenu = document.getElementById("mobile-menu");
+
+    if (mobileBtn && mobileMenu) {
+      // Toggle menu
+      mobileBtn.addEventListener("click", (e) => {
+        e.stopPropagation(); // Prevent immediate closing if we add body click listener later
+        mobileMenu.classList.toggle("hidden");
+      });
+
+      // Close menu when a link is clicked
+      mobileMenu.querySelectorAll("a").forEach((link) => {
+        link.addEventListener("click", () => {
+          mobileMenu.classList.add("hidden");
+        });
+      });
+
+      // Close menu when clicking outside
+      document.addEventListener("click", (e) => {
+        if (!mobileMenu.contains(e.target) && !mobileBtn.contains(e.target)) {
+          mobileMenu.classList.add("hidden");
+        }
       });
     }
   }
