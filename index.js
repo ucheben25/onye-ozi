@@ -952,21 +952,59 @@ const App = (() => {
     if (mobileBtn && mobileMenu) {
       // Toggle menu
       mobileBtn.addEventListener("click", (e) => {
-        e.stopPropagation(); // Prevent immediate closing if we add body click listener later
-        mobileMenu.classList.toggle("hidden");
+        e.stopPropagation();
+
+        // Toggle open/closed state
+        const isClosed = mobileMenu.classList.contains("pointer-events-none");
+
+        // Icons
+        const hamburgerIcon = `
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+          </svg>`;
+        const closeIcon = `
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+          </svg>`;
+
+        if (isClosed) {
+          mobileMenu.classList.remove(
+            "pointer-events-none",
+            "opacity-0",
+            "-translate-y-2"
+          );
+          mobileBtn.innerHTML = closeIcon;
+        } else {
+          mobileMenu.classList.add(
+            "pointer-events-none",
+            "opacity-0",
+            "-translate-y-2"
+          );
+          mobileBtn.innerHTML = hamburgerIcon;
+        }
       });
+
+      const closeMenu = () => {
+        mobileMenu.classList.add(
+          "pointer-events-none",
+          "opacity-0",
+          "-translate-y-2"
+        );
+        mobileBtn.innerHTML = `
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+          </svg>`;
+      };
 
       // Close menu when a link is clicked
       mobileMenu.querySelectorAll("a").forEach((link) => {
-        link.addEventListener("click", () => {
-          mobileMenu.classList.add("hidden");
-        });
+        link.addEventListener("click", closeMenu);
       });
 
       // Close menu when clicking outside
       document.addEventListener("click", (e) => {
         if (!mobileMenu.contains(e.target) && !mobileBtn.contains(e.target)) {
-          mobileMenu.classList.add("hidden");
+          closeMenu();
         }
       });
     }
