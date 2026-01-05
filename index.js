@@ -62,7 +62,7 @@ const App = (() => {
     const container = el("main", { class: "flex-1" });
     container.innerHTML = `
       <!-- Hero Section -->
-      <section class="relative min-h-[600px] flex items-center justify-center overflow-hidden">
+      <section class="relative min-h-[600px] lg:h-[90vh] flex items-center justify-center overflow-hidden">
         <!-- Background Image with Overlay -->
         <div class="absolute inset-0 z-0">
           <img 
